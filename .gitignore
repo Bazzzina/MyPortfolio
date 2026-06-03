@@ -1,0 +1,9 @@
+GEMENI.md
+references/
+
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
+Desktop.ini
