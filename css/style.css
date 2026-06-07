@@ -1,7 +1,7 @@
 /* ==========================================================================
    CSS Reset, Custom Properties & Base Styles
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+/* Google Fonts loaded via <link> in HTML <head> for render performance */
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -13,23 +13,19 @@
     /* Cyber Dark Color Scheme */
     --bg-main: #02040a;
     --bg-surface: rgba(11, 18, 36, 0.45);
-    --bg-surface-hover: rgba(16, 26, 50, 0.65);
     --bg-terminal: #040712;
     --border-color: rgba(255, 255, 255, 0.05);
     --border-glow: rgba(0, 210, 255, 0.15);
 
     /* Cyber Neon Accents */
     --color-primary: #00d2ff;
-    --color-primary-rgb: 0, 210, 255;
     --color-secondary: #b55fe6;
-    --color-secondary-rgb: 181, 95, 230;
     --color-accent: #ff007f;
-    --color-accent-rgb: 255, 0, 127;
 
     /* Text Colors */
     --text-main: #f8fafc;
     --text-subtle: #94a3b8;
-    --text-muted: #64748b;
+    --text-muted: #7c8da3;
 
     /* Fonts */
     --font-heading: 'Plus Jakarta Sans', sans-serif;
@@ -77,6 +73,26 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     position: relative;
+}
+
+/* Skip to Content Link (Accessibility) */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 999;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: var(--bg-main);
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+    transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+    top: 0;
 }
 
 /* Ambient Radial Glow Gradients and Mesh Overlay */
@@ -423,6 +439,34 @@ body::after {
     box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
 }
 
+/* Large Button Variant */
+.btn-lg {
+    padding: 1.1rem 3rem;
+    font-size: 1rem;
+}
+
+/* Keyboard Focus Styles (Accessibility) */
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(0, 210, 255, 0.2);
+}
+
+.suggestion-chip:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.social-btn-box:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
 /* Fluid Morphing Photo Container Placeholder */
 .hero-photo-container {
     width: 320px;
@@ -601,7 +645,8 @@ body::after {
 }
 
 .line-content {
-    white-space: pre;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 /* Syntax Highlighting Colors */
@@ -730,10 +775,7 @@ body::after {
     transition: stroke var(--transition-fast), stroke-width var(--transition-fast);
 }
 
-.neural-line.active {
-    stroke: rgba(0, 210, 255, 0.35);
-    stroke-width: 3;
-}
+
 
 .skill-node {
     cursor: pointer;
@@ -775,7 +817,13 @@ body::after {
 @media (max-width: 900px) {
     .skills-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
+    }
+    .skills-left {
+        order: 2;
+    }
+    .neural-container {
+        order: 1;
     }
 }
 
@@ -948,10 +996,25 @@ body::after {
     color: var(--text-muted);
 }
 
+.project-screen-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    position: relative;
+}
+
 .project-details-body {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    padding: 2.5rem;
+}
+
+.projects-empty-msg {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--text-muted);
 }
 
 .project-full-title {
@@ -1081,6 +1144,19 @@ body::after {
     border: 1px dashed rgba(255, 255, 255, 0.1);
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
+}
+
+.cert-image {
+    max-height: 24px;
+    max-width: 120px;
+    object-fit: contain;
+    border-radius: 4px;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+}
+
+.cert-image:hover {
+    opacity: 1;
 }
 
 .cert-link {
@@ -1226,52 +1302,53 @@ body::after {
     background: rgba(0, 210, 255, 0.05);
 }
 
-/* Input Form Area */
-.chat-input-form {
-    padding: 1.25rem 1.5rem;
+/* FAQ Panel in Chatbot */
+.chat-faq-panel {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
     display: flex;
+    flex-direction: column;
     gap: 0.75rem;
 }
 
-.chat-input-box {
-    flex-grow: 1;
-    background-color: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 0 1rem;
-    color: var(--text-main);
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-    outline: none;
-    transition: border-color var(--transition-fast);
+.chat-faq-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
 }
 
-.chat-input-box:focus {
-    border-color: var(--color-primary);
-}
-
-.chat-send-btn {
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+.chat-faq-chips {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-main);
-    transition: transform var(--transition-fast);
+    flex-wrap: wrap;
+    gap: 0.6rem;
 }
 
-.chat-send-btn:hover {
-    transform: scale(1.05);
+/* Typing Indicator Animation */
+.typing-dots {
+    display: inline-flex;
+    gap: 0.15rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    letter-spacing: 0.1em;
 }
 
-.chat-send-btn svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
+.typing-dots span {
+    animation: typingBounce 1.2s ease-in-out infinite;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+    0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+    30% { opacity: 1; transform: translateY(-4px); }
 }
 
 /* Floating SVG Robot Companion Graphic */
@@ -1316,7 +1393,10 @@ body::after {
         gap: 3rem;
     }
     .bot-graphic-panel {
-        display: none; /* Hide robot figure on smaller mobile ports to maximize screen real estate */
+        display: none;
+    }
+    .chat-window {
+        height: 420px;
     }
 }
 
@@ -1409,7 +1489,7 @@ body::after {
 .footer-meta-info {
     margin-top: 4rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border-top: 1px solid var(--border-color);
     padding-top: 2.5rem;
@@ -1417,21 +1497,7 @@ body::after {
     color: var(--text-muted);
 }
 
-.footer-nav {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
 
-.footer-nav a {
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color var(--transition-fast);
-}
-
-.footer-nav a:hover {
-    color: var(--color-primary);
-}
 
 @media (max-width: 768px) {
     .contact-headline {
@@ -1444,9 +1510,7 @@ body::after {
         text-align: center;
     }
 
-    .footer-nav {
-        justify-content: center;
-    }
+
 
     /* Mobile Hero Button Stack */
     .hero-buttons {
@@ -1461,5 +1525,66 @@ body::after {
     .neural-wave-svg {
         height: 60px;
         margin: 1rem 0;
+    }
+}
+
+/* Small Phone Breakpoint */
+@media (max-width: 480px) {
+    :root {
+        --container-padding: 1.25rem;
+    }
+    .hero-title {
+        font-size: 2.4rem;
+    }
+    .hero-description {
+        font-size: 1rem;
+    }
+    .hero-photo-container {
+        width: 220px;
+        height: 260px;
+    }
+    .about-title {
+        font-size: 1.75rem;
+    }
+    .section-header {
+        font-size: 0.75rem;
+        margin-bottom: 2rem;
+    }
+    .terminal-body {
+        font-size: 0.7rem;
+        padding: 1rem 0.75rem;
+    }
+    .project-full-title {
+        font-size: 1.5rem;
+    }
+    .contact-headline {
+        font-size: 2rem;
+    }
+    .chat-window {
+        height: 380px;
+    }
+    .chat-bubble {
+        max-width: 90%;
+        font-size: 0.85rem;
+    }
+    .skill-detail-card {
+        padding: 1.25rem;
+        min-height: auto;
+    }
+    .certificate-card {
+        padding: 1.75rem 1.5rem;
+        min-height: auto;
+    }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    html {
+        scroll-behavior: auto;
     }
 }

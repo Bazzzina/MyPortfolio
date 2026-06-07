@@ -9,541 +9,336 @@
     <meta name="description" content="Portfolio of Misbah Bazina, an AI Engineering student building autonomous intelligent agents that reason, plan, and act to solve real-world problems.">
     <meta name="author" content="Misbah Bazina">
     
+    <!-- Google Fonts (preconnected for performance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
     <!-- External Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#about" class="skip-link">Skip to main content</a>
+
     <!-- Header Navigation -->
-    <header class="header">
-        <nav class="nav container">
+    <header class="header" role="banner">
+        <nav class="nav container" aria-label="Primary navigation">
             <a href="#" class="logo">Bazina<span>.ai</span></a>
-            <button class="hamburger" aria-label="Toggle Navigation Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
             </button>
-            <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">About me</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#certificates" class="nav-link">Certificates</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#ask-bot" class="nav-link">Contact me</a></li>
+            <ul class="nav-menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="#about" class="nav-link" role="menuitem">About me</a></li>
+                <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#certificates" class="nav-link" role="menuitem">Certificates</a></li>
+                <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact me</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <span class="hero-eyebrow">Hi, I am</span>
-                    <h1 class="hero-title"><span class="name-braces">{</span> Misbah Bazina <span class="name-braces">}</span></h1>
-                    <p class="hero-description">I'm an AI Engineering student specializing in building autonomous intelligent agents that reason, plan, and act to solve real-world problems.</p>
-                    <div class="hero-buttons">
-                        <a href="javascript:void(0)" class="btn btn-primary" onclick="alert('CV Download path not set. Please drop your CV file here.')">Download CV</a>
-                        <a href="#ask-bot" class="btn btn-secondary">Start Project</a>
-                    </div>
-                </div>
-                <!-- Morphing Brush Silhouette Container (Empty image container as requested) -->
-                <div class="hero-photo-container">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                    </svg>
-                    <span>Photo Placeholder</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main id="main-content">
 
-    <!-- About Section -->
-    <section id="about" class="about-section section-padding reveal">
-        <div class="container">
-            <div class="section-header">01 // About me</div>
-            <div class="about-grid">
-                <div class="about-intro">
-                    <h2 class="about-title">Translating autonomous reasoning into engineering value.</h2>
-                    <p class="about-desc">I am currently in my 3rd year of AI Engineering. I design and scale neural architectures, reasoning-based workflows, and multi-agent platforms that tackle real business problems with logical execution.</p>
-                    <p class="about-desc">Seeking a collaborative, engineering-first team where I can apply strict developer practices to modern machine intelligence systems.</p>
-                </div>
-                <!-- Developer Mock Terminal -->
-                <div class="terminal-window">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="terminal-dot dot-red"></span>
-                            <span class="terminal-dot dot-yellow"></span>
-                            <span class="terminal-dot dot-green"></span>
+        <!-- Hero Section -->
+        <section class="hero-section" aria-label="Introduction">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <span class="hero-eyebrow">Hi, I am</span>
+                        <h1 class="hero-title">
+                            <span class="name-braces" aria-hidden="true">{</span>
+                            Misbah Bazina
+                            <span class="name-braces" aria-hidden="true">}</span>
+                        </h1>
+                        <p class="hero-description">I'm an AI Engineering student specializing in building autonomous intelligent agents that reason, plan, and act to solve real-world problems.</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn btn-primary" id="cv-download-btn" download>Download CV</a>
                         </div>
-                        <div class="terminal-title">developer_profile.js</div>
                     </div>
-                    <div class="terminal-body">
-                        <div class="code-line"><span class="line-num">1</span><span class="line-content"><span class="code-keyword">const</span> <span class="code-id">developer</span> = {</span></div>
-                        <div class="code-line"><span class="line-num">2</span><span class="line-content">    name: <span class="code-string">"Misbah Bazina"</span>,</span></div>
-                        <div class="code-line"><span class="line-num">3</span><span class="line-content">    role: <span class="code-string">"AI Engineer Student"</span>,</span></div>
-                        <div class="code-line"><span class="line-num">4</span><span class="line-content">    academicYear: <span class="code-number">3</span>,</span></div>
-                        <div class="code-line"><span class="line-num">5</span><span class="line-content">    coreFocus: <span class="code-string">"Autonomous Intelligent Agents"</span>,</span></div>
-                        <div class="code-line"><span class="line-num">6</span><span class="line-content">    methodologies: [</span></div>
-                        <div class="code-line"><span class="line-num">7</span><span class="line-content">        <span class="code-string">"ReAct Reasoning"</span>,</span></div>
-                        <div class="code-line"><span class="line-num">8</span><span class="line-content">        <span class="code-string">"Multi-Agent Orchestration"</span>,</span></div>
-                        <div class="code-line"><span class="line-num">9</span><span class="line-content">        <span class="code-string">"Vector Embedding Chains"</span></span></div>
-                        <div class="code-line"><span class="line-num">10</span><span class="line-content">    ],</span></div>
-                        <div class="code-line"><span class="line-num">11</span><span class="line-content">    activeStack: [<span class="code-string">"Python"</span>, <span class="code-string">"PyTorch"</span>, <span class="code-string">"SQL"</span>, <span class="code-string">"Git"</span>],</span></div>
-                        <div class="code-line"><span class="line-num">12</span><span class="line-content">    status: <span class="code-string">"Looking for junior / internship role"</span></span></div>
-                        <div class="code-line"><span class="line-num">13</span><span class="line-content">};</span></div>
-                        <div class="code-line"><span class="line-num">14</span><span class="line-content"></span></div>
-                        <div class="code-line"><span class="line-num">15</span><span class="line-content"><span class="code-comment">// Focusing on the intersection of machine reasoning</span></span></div>
-                        <div class="code-line"><span class="line-num">16</span><span class="line-content"><span class="code-comment">// and practical scalability.</span></span></div>
+                    <!-- Photo Placeholder (empty until user adds their photo) -->
+                    <div class="hero-photo-container" aria-label="Profile photo placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        </svg>
+                        <span>Photo Placeholder</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section section-padding reveal">
-        <div class="container">
-            <div class="section-header">02 // Selected Projects</div>
-            
-            <div class="projects-grid-layout">
-                <!-- Sidebar selection list -->
-                <div class="projects-sidebar-list" id="projects-sidebar">
-                    <!-- Loaded dynamically via JavaScript -->
+        <!-- About Section -->
+        <section id="about" class="about-section section-padding reveal" aria-label="About me">
+            <div class="container">
+                <div class="section-header">01 // About me</div>
+                <div class="about-grid">
+                    <div class="about-intro">
+                        <h2 class="about-title">Translating autonomous reasoning into engineering value.</h2>
+                        <p class="about-desc">I am currently in my 3rd year of AI Engineering. I design and scale neural architectures, reasoning-based workflows, and multi-agent platforms that tackle real business problems with logical execution.</p>
+                        <p class="about-desc">Seeking a collaborative, engineering-first team where I can apply strict developer practices to modern machine intelligence systems.</p>
+                    </div>
+                    <!-- Developer Mock Terminal -->
+                    <div class="terminal-window" role="img" aria-label="Developer profile displayed as code">
+                        <div class="terminal-header">
+                            <div class="terminal-dots" aria-hidden="true">
+                                <span class="terminal-dot dot-red"></span>
+                                <span class="terminal-dot dot-yellow"></span>
+                                <span class="terminal-dot dot-green"></span>
+                            </div>
+                            <div class="terminal-title">developer_profile.js</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="code-line"><span class="line-num">1</span><span class="line-content"><span class="code-keyword">const</span> <span class="code-id">developer</span> = {</span></div>
+                            <div class="code-line"><span class="line-num">2</span><span class="line-content">    name: <span class="code-string">"Misbah Bazina"</span>,</span></div>
+                            <div class="code-line"><span class="line-num">3</span><span class="line-content">    role: <span class="code-string">"AI Engineer Student"</span>,</span></div>
+                            <div class="code-line"><span class="line-num">4</span><span class="line-content">    academicYear: <span class="code-number">3</span>,</span></div>
+                            <div class="code-line"><span class="line-num">5</span><span class="line-content">    coreFocus: <span class="code-string">"Autonomous Intelligent Agents"</span>,</span></div>
+                            <div class="code-line"><span class="line-num">6</span><span class="line-content">    methodologies: [</span></div>
+                            <div class="code-line"><span class="line-num">7</span><span class="line-content">        <span class="code-string">"ReAct Reasoning"</span>,</span></div>
+                            <div class="code-line"><span class="line-num">8</span><span class="line-content">        <span class="code-string">"Multi-Agent Orchestration"</span>,</span></div>
+                            <div class="code-line"><span class="line-num">9</span><span class="line-content">        <span class="code-string">"Vector Embedding Chains"</span></span></div>
+                            <div class="code-line"><span class="line-num">10</span><span class="line-content">    ],</span></div>
+                            <div class="code-line"><span class="line-num">11</span><span class="line-content">    activeStack: [<span class="code-string">"Python"</span>, <span class="code-string">"PyTorch"</span>, <span class="code-string">"SQL"</span>, <span class="code-string">"Git"</span>],</span></div>
+                            <div class="code-line"><span class="line-num">12</span><span class="line-content">    status: <span class="code-string">"Looking for junior / internship role"</span></span></div>
+                            <div class="code-line"><span class="line-num">13</span><span class="line-content">};</span></div>
+                            <div class="code-line"><span class="line-num">14</span><span class="line-content"></span></div>
+                            <div class="code-line"><span class="line-num">15</span><span class="line-content"><span class="code-comment">// Focusing on the intersection of machine reasoning</span></span></div>
+                            <div class="code-line"><span class="line-num">16</span><span class="line-content"><span class="code-comment">// and practical scalability.</span></span></div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section section-padding reveal" aria-label="Selected projects">
+            <div class="container">
+                <div class="section-header">02 // Selected Projects</div>
                 
-                <!-- Active Project detail card & screen preview placeholder -->
-                <div class="project-preview-column">
-                    <div class="project-screen-mockup">
-                        <div class="screen-header">
-                            <span class="screen-dot"></span>
-                            <span class="screen-dot"></span>
-                            <span class="screen-dot"></span>
+                <div class="projects-grid-layout">
+                    <!-- Sidebar selection list (populated by main.js) -->
+                    <div class="projects-sidebar-list" id="projects-sidebar" role="tablist" aria-label="Project selector"></div>
+                    
+                    <!-- Active project preview & details -->
+                    <div class="project-preview-column" role="tabpanel" aria-label="Project details">
+                        <div class="project-screen-mockup">
+                            <div class="screen-header" aria-hidden="true">
+                                <span class="screen-dot"></span>
+                                <span class="screen-dot"></span>
+                                <span class="screen-dot"></span>
+                            </div>
+                            <div class="screen-content-canvas" id="active-project-canvas">
+                                <div class="screen-placeholder-label">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                                    </svg>
+                                    <span class="screen-placeholder-text">Project Canvas</span>
+                                    <span class="screen-placeholder-sub">Screenshot Empty</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="screen-content-canvas">
-                            <div class="screen-placeholder-label">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-                                </svg>
-                                <span class="screen-placeholder-text">Project Canvas</span>
-                                <span class="screen-placeholder-sub">Screenshot Empty</span>
+                        
+                        <div class="project-details-body glass-panel">
+                            <h3 class="project-full-title" id="active-project-title">Project Title</h3>
+                            <p class="project-full-desc" id="active-project-desc">Project description loading...</p>
+                            <div class="project-tags-wrap" id="active-project-tags"></div>
+                            <div class="project-action-bar">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="active-project-github">
+                                    <span>View on GitHub</span>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="project-details-body glass-panel" style="padding: 2.5rem;">
-                        <h3 class="project-full-title" id="active-project-title">Project Title</h3>
-                        <p class="project-full-desc" id="active-project-desc">Project Description loading...</p>
-                        <div class="project-tags-wrap" id="active-project-tags">
-                            <!-- Tags injected here -->
-                        </div>
-                        <div class="project-action-bar">
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="active-project-github">
-                                <span>View on GitHub</span>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Certificates Section -->
-    <section id="certificates" class="certificates-section section-padding reveal">
-        <div class="container">
-            <div class="section-header">03 // Certificates</div>
-            <p class="certificates-subtitle">Key credentials in Machine Learning, Deep Learning, and Frontend engineering.</p>
-            
-            <div class="certificates-grid">
-                <!-- Certificate 1 -->
-                <div class="certificate-card glass-panel">
-                    <div class="cert-card-top">
-                        <span class="cert-badge">Machine Learning</span>
-                        <h3 class="cert-name">Machine Learning Specialization</h3>
-                        <p class="cert-issuer">Stanford University & DeepLearning.AI</p>
-                    </div>
-                    <div class="cert-footer">
-                        <span class="cert-placeholder-tag">Image Empty</span>
-                        <a href="https://www.coursera.org" target="_blank" rel="noopener" class="cert-link">
-                            <span>Verify Credential</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Certificate 2 -->
-                <div class="certificate-card glass-panel">
-                    <div class="cert-card-top">
-                        <span class="cert-badge">Deep Learning</span>
-                        <h3 class="cert-name">Deep Learning Specialization</h3>
-                        <p class="cert-issuer">DeepLearning.AI</p>
-                    </div>
-                    <div class="cert-footer">
-                        <span class="cert-placeholder-tag">Image Empty</span>
-                        <a href="https://www.coursera.org" target="_blank" rel="noopener" class="cert-link">
-                            <span>Verify Credential</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Certificate 3 -->
-                <div class="certificate-card glass-panel">
-                    <div class="cert-card-top">
-                        <span class="cert-badge">Frontend Dev</span>
-                        <h3 class="cert-name">Meta Front-End Developer</h3>
-                        <p class="cert-issuer">Meta Professional Certificate</p>
-                    </div>
-                    <div class="cert-footer">
-                        <span class="cert-placeholder-tag">Image Empty</span>
-                        <a href="https://www.coursera.org" target="_blank" rel="noopener" class="cert-link">
-                            <span>Verify Credential</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section section-padding reveal">
-        <div class="container">
-            <div class="section-header">04 // Core Capabilities</div>
-            <div class="skills-grid">
-                <div class="skills-left">
-                    <h2 class="about-title">Interconnected Skills Matrix</h2>
-                    <!-- Hover detail card -->
-                    <div class="skill-detail-card glass-panel">
-                        <div class="skill-detail-header">
-                            <span class="skill-dot"></span>
-                            <span class="skill-title" id="skill-title">Loading...</span>
-                        </div>
-                        <p class="skill-desc" id="skill-desc">Hover over nodes on the neural network graph to inspect skill proficiency details.</p>
-                        <div class="skill-progress-wrap">
-                            <div class="skill-progress-bar" id="skill-progress"></div>
-                        </div>
-                        <div class="skill-level-text" id="skill-level">Level: -</div>
-                    </div>
-                </div>
+        <!-- Certificates Section -->
+        <section id="certificates" class="certificates-section section-padding reveal" aria-label="Certificates">
+            <div class="container">
+                <div class="section-header">03 // Certificates</div>
+                <p class="certificates-subtitle">Key credentials in Machine Learning, Deep Learning, and Frontend engineering.</p>
                 
-                <!-- SVG Neural Connection graph -->
-                <div class="neural-container">
-                    <svg class="neural-network-svg" viewBox="0 0 400 300">
-                        <!-- Connection Lines -->
-                        <line class="neural-line line-l1" x1="100" y1="80" x2="200" y2="60" />
-                        <line class="neural-line line-l2" x1="100" y1="80" x2="130" y2="180" />
-                        <line class="neural-line line-l3" x1="200" y1="60" x2="300" y2="110" />
-                        <line class="neural-line line-l4" x1="130" y1="180" x2="240" y2="220" />
-                        <line class="neural-line line-l5" x1="300" y1="110" x2="320" y2="200" />
-                        <line class="neural-line line-l6" x1="240" y1="220" x2="320" y2="200" />
-                        <line class="neural-line line-l7" x1="200" y1="60" x2="130" y2="180" />
-                        <line class="neural-line line-l8" x1="130" y1="180" x2="300" y2="110" />
-
-                        <!-- Nodes groups -->
-                        <!-- Python (Top Left) -->
-                        <g class="skill-node active" data-skill="Python" data-level="95" data-desc="Fluent in Python for backend script scaling, algorithmic bisections, object design, and deep learning implementations.">
-                            <circle class="node-circle" cx="100" cy="80" r="14" />
-                            <text class="node-text" x="100" y="84">PY</text>
-                        </g>
-
-                        <!-- PyTorch (Top Middle) -->
-                        <g class="skill-node" data-skill="PyTorch" data-level="85" data-desc="Proficient in designing convolutional loops, neural network adjustments, loss computation adjustments, and running tensor logic loops.">
-                            <circle class="node-circle" cx="200" cy="60" r="14" />
-                            <text class="node-text" x="200" y="64">PT</text>
-                        </g>
-
-                        <!-- Intelligent Agents (Middle Right) -->
-                        <g class="skill-node" data-skill="Intelligent Agents" data-level="90" data-desc="Expertise in designing logical agent pipelines that call external tools, maintain execution states, reason, and output structured resolutions.">
-                            <circle class="node-circle" cx="300" cy="110" r="14" />
-                            <text class="node-text" x="300" y="114">AG</text>
-                        </g>
-
-                        <!-- NLP (Middle Left) -->
-                        <g class="skill-node" data-skill="Natural Language Processing" data-level="80" data-desc="Experienced with transformers, text tokenizers, prompt engineering structures, parsing semantic files, and text categorization pipelines.">
-                            <circle class="node-circle" cx="130" cy="180" r="14" />
-                            <text class="node-text" x="130" y="184">LP</text>
-                        </g>
-
-                        <!-- SQL & Databases (Bottom Middle) -->
-                        <g class="skill-node" data-skill="SQL & Databases" data-level="75" data-desc="Handling structured storage formats, indexing rows, querying datasets, and linking SQL engines with Python APIs.">
-                            <circle class="node-circle" cx="240" cy="220" r="14" />
-                            <text class="node-text" x="240" y="224">DB</text>
-                        </g>
-
-                        <!-- Git & Tooling (Bottom Right) -->
-                        <g class="skill-node" data-skill="Git & CI/CD Tooling" data-level="85" data-desc="Solid version tracking flows, clean commit logging, building deployment actions, and managing package dependencies.">
-                            <circle class="node-circle" cx="320" cy="200" r="14" />
-                            <text class="node-text" x="320" y="204">GT</text>
-                        </g>
-                    </svg>
+                <div class="certificates-grid" id="certificates-grid">
+                    <!-- Dynamically populated from certificates.js -->
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Chatbot / Contact Section -->
-    <section id="ask-bot" class="bot-section section-padding reveal">
-        <div class="container">
-            <div class="section-header">05 // Ask my bot</div>
-            <div class="bot-grid">
-                <!-- Chat Window UI -->
-                <div class="chat-window glass-panel">
-                    <div class="chat-header">
-                        <span class="bot-status-dot"></span>
-                        <span class="bot-chat-title">BazinaBot v1.0</span>
-                    </div>
-                    
-                    <div class="chat-messages-container" id="chat-messages">
-                        <div class="chat-bubble bubble-bot">
-                            Hello! I am Misbah's assistant. Ask me anything about his skills, projects, or professional background!
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section section-padding reveal" aria-label="Core capabilities">
+            <div class="container">
+                <div class="section-header">04 // Core Capabilities</div>
+                <div class="skills-grid">
+                    <div class="skills-left">
+                        <h2 class="about-title">Interconnected Skills Matrix</h2>
+                        <!-- Skill detail card (updates on node hover/tap) -->
+                        <div class="skill-detail-card glass-panel" role="region" aria-live="polite" aria-label="Skill details">
+                            <div class="skill-detail-header">
+                                <span class="skill-dot" aria-hidden="true"></span>
+                                <span class="skill-title" id="skill-title">Loading...</span>
+                            </div>
+                            <p class="skill-desc" id="skill-desc">Tap or hover over nodes on the graph to inspect skill proficiency details.</p>
+                            <div class="skill-progress-wrap" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                <div class="skill-progress-bar" id="skill-progress"></div>
+                            </div>
+                            <div class="skill-level-text" id="skill-level">Level: -</div>
                         </div>
                     </div>
                     
-                    <!-- Suggestion Chips (FAQs) -->
-                    <div class="chat-suggestions-wrap" style="padding: 1.5rem; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 0.75rem;">
-                        <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">Select a question to ask:</span>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
-                            <button class="suggestion-chip" data-type="strengths">Core Strengths?</button>
-                            <button class="suggestion-chip" data-type="stack">Tech Stack?</button>
-                            <button class="suggestion-chip" data-type="projects">Key Projects?</button>
-                            <button class="suggestion-chip" data-type="about">About Misbah?</button>
-                            <button class="suggestion-chip" data-type="role">Availability & Role?</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Robot Mascot Column -->
-                <div class="bot-graphic-panel">
-                    <div class="bot-speech-bubble" id="robot-speech">Ask me!</div>
-                    <div class="robot-svg-wrapper">
-                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Antennas -->
-                            <rect x="47" y="10" width="6" height="15" rx="3" fill="var(--color-primary)" />
-                            <circle cx="50" cy="8" r="5" fill="var(--color-accent)" />
-                            
-                            <!-- Ears -->
-                            <rect x="15" y="38" width="10" height="20" rx="5" fill="var(--color-secondary)" />
-                            <rect x="75" y="38" width="10" height="20" rx="5" fill="var(--color-secondary)" />
-                            
-                            <!-- Head -->
-                            <rect x="22" y="25" width="56" height="46" rx="12" fill="#0b1224" stroke="var(--color-primary)" stroke-width="3" />
-                            
-                            <!-- Screen/Face -->
-                            <rect x="30" y="33" width="40" height="22" rx="6" fill="#040712" stroke="rgba(255, 255, 255, 0.05)" />
-                            
-                            <!-- Eyes -->
-                            <circle cx="42" cy="44" r="5" fill="var(--color-primary)" />
-                            <circle cx="58" cy="44" r="5" fill="var(--color-primary)" />
-                            <ellipse cx="42" cy="44" rx="2" ry="3" fill="#ffffff" />
-                            <ellipse cx="58" cy="44" rx="2" ry="3" fill="#ffffff" />
-                            
-                            <!-- Mouth -->
-                            <path d="M 44 51 Q 50 54 56 51" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" />
-                            
-                            <!-- Neck -->
-                            <rect x="44" y="71" width="12" height="10" rx="2" fill="var(--color-secondary)" />
-                            
-                            <!-- Body Top -->
-                            <path d="M 30 81 L 70 81 L 65 95 L 35 95 Z" fill="#0b1224" stroke="var(--color-primary)" stroke-width="2" />
+                    <!-- SVG Neural Connection Graph -->
+                    <div class="neural-container" aria-label="Interactive skills network graph">
+                        <svg class="neural-network-svg" viewBox="0 0 400 300" role="img" aria-label="Skills network showing Python, PyTorch, Agents, NLP, SQL, and Git interconnections">
+                            <!-- Connection Lines -->
+                            <line class="neural-line" x1="100" y1="80" x2="200" y2="60" />
+                            <line class="neural-line" x1="100" y1="80" x2="130" y2="180" />
+                            <line class="neural-line" x1="200" y1="60" x2="300" y2="110" />
+                            <line class="neural-line" x1="130" y1="180" x2="240" y2="220" />
+                            <line class="neural-line" x1="300" y1="110" x2="320" y2="200" />
+                            <line class="neural-line" x1="240" y1="220" x2="320" y2="200" />
+                            <line class="neural-line" x1="200" y1="60" x2="130" y2="180" />
+                            <line class="neural-line" x1="130" y1="180" x2="300" y2="110" />
+
+                            <!-- Skill Nodes -->
+                            <g class="skill-node active" data-skill="Python" data-level="95" data-desc="Fluent in Python for backend script scaling, algorithmic bisections, object design, and deep learning implementations." tabindex="0" role="button" aria-label="Python skill node">
+                                <circle class="node-circle" cx="100" cy="80" r="14" />
+                                <text class="node-text" x="100" y="84">PY</text>
+                            </g>
+
+                            <g class="skill-node" data-skill="PyTorch" data-level="85" data-desc="Proficient in designing convolutional loops, neural network adjustments, loss computation adjustments, and running tensor logic loops." tabindex="0" role="button" aria-label="PyTorch skill node">
+                                <circle class="node-circle" cx="200" cy="60" r="14" />
+                                <text class="node-text" x="200" y="64">PT</text>
+                            </g>
+
+                            <g class="skill-node" data-skill="Intelligent Agents" data-level="90" data-desc="Expertise in designing logical agent pipelines that call external tools, maintain execution states, reason, and output structured resolutions." tabindex="0" role="button" aria-label="Intelligent Agents skill node">
+                                <circle class="node-circle" cx="300" cy="110" r="14" />
+                                <text class="node-text" x="300" y="114">AG</text>
+                            </g>
+
+                            <g class="skill-node" data-skill="Natural Language Processing" data-level="80" data-desc="Experienced with transformers, text tokenizers, prompt engineering structures, parsing semantic files, and text categorization pipelines." tabindex="0" role="button" aria-label="NLP skill node">
+                                <circle class="node-circle" cx="130" cy="180" r="14" />
+                                <text class="node-text" x="130" y="184">LP</text>
+                            </g>
+
+                            <g class="skill-node" data-skill="SQL &amp; Databases" data-level="75" data-desc="Handling structured storage formats, indexing rows, querying datasets, and linking SQL engines with Python APIs." tabindex="0" role="button" aria-label="SQL and Databases skill node">
+                                <circle class="node-circle" cx="240" cy="220" r="14" />
+                                <text class="node-text" x="240" y="224">DB</text>
+                            </g>
+
+                            <g class="skill-node" data-skill="Git &amp; CI/CD Tooling" data-level="85" data-desc="Solid version tracking flows, clean commit logging, building deployment actions, and managing package dependencies." tabindex="0" role="button" aria-label="Git and CI/CD skill node">
+                                <circle class="node-circle" cx="320" cy="200" r="14" />
+                                <text class="node-text" x="320" y="204">GT</text>
+                            </g>
                         </svg>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Call to Action Section -->
-    <section class="contact-section section-padding reveal">
-        <div class="container contact-container">
-            <h2 class="contact-headline">Let's start something <span>great</span> together</h2>
-            <p class="contact-desc">Open to junior opportunities, internships, and collaborative research in agentic AI. Let's engineering-mind the future.</p>
-            
-            <a href="mailto:bazina.misbah@gmail.com" class="btn btn-primary" style="padding: 1.1rem 3rem; font-size: 1rem;">Get in touch</a>
-            
-            <!-- Beautiful Neural Wave divider -->
-            <svg class="neural-wave-svg" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M-50 60 C 100 110, 200 20, 350 70 C 500 120, 650 30, 850 60" stroke="rgba(0, 210, 255, 0.15)" stroke-width="2" />
-                <path d="M-50 40 C 150 20, 250 100, 400 50 C 550 0, 600 110, 850 80" stroke="rgba(181, 95, 230, 0.15)" stroke-width="1.5" />
-                <path d="M-50 80 C 120 50, 180 80, 300 40 C 420 0, 580 80, 850 30" stroke="rgba(255, 0, 127, 0.1)" stroke-width="1" />
-            </svg>
-
-            <!-- Social Links Grid -->
-            <div class="social-links-grid">
-                <a href="https://github.com/Bazzzina" target="_blank" rel="noopener noreferrer" class="social-btn-box" title="GitHub">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                <a href="https://linkedin.com/in/misbah-bazina" target="_blank" rel="noopener noreferrer" class="social-btn-box" title="LinkedIn">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                </a>
+        <!-- Chatbot / FAQ Section -->
+        <section id="ask-bot" class="bot-section section-padding reveal" aria-label="Ask my bot">
+            <div class="container">
+                <div class="section-header">05 // Ask my bot</div>
+                <div class="bot-grid">
+                    <!-- Chat Window -->
+                    <div class="chat-window glass-panel" role="region" aria-label="Chatbot assistant">
+                        <div class="chat-header">
+                            <span class="bot-status-dot" aria-hidden="true"></span>
+                            <span class="bot-chat-title">BazinaBot v1.0</span>
+                        </div>
+                        
+                        <div class="chat-messages-container" id="chat-messages" role="log" aria-live="polite" aria-label="Chat messages">
+                            <div class="chat-bubble bubble-bot">
+                                Hello! I am Misbah's assistant. Ask me anything about his skills, projects, or professional background!
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Suggestion Chips -->
+                        <div class="chat-faq-panel">
+                            <span class="chat-faq-label">Select a question to ask:</span>
+                            <div class="chat-faq-chips">
+                                <button type="button" class="suggestion-chip" data-type="strengths">Core Strengths?</button>
+                                <button type="button" class="suggestion-chip" data-type="stack">Tech Stack?</button>
+                                <button type="button" class="suggestion-chip" data-type="projects">Key Projects?</button>
+                                <button type="button" class="suggestion-chip" data-type="about">About Misbah?</button>
+                                <button type="button" class="suggestion-chip" data-type="role">Availability &amp; Role?</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Robot Mascot -->
+                    <div class="bot-graphic-panel" aria-hidden="true">
+                        <div class="bot-speech-bubble" id="robot-speech">Ask me!</div>
+                        <div class="robot-svg-wrapper">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="47" y="10" width="6" height="15" rx="3" fill="var(--color-primary)" />
+                                <circle cx="50" cy="8" r="5" fill="var(--color-accent)" />
+                                <rect x="15" y="38" width="10" height="20" rx="5" fill="var(--color-secondary)" />
+                                <rect x="75" y="38" width="10" height="20" rx="5" fill="var(--color-secondary)" />
+                                <rect x="22" y="25" width="56" height="46" rx="12" fill="#0b1224" stroke="var(--color-primary)" stroke-width="3" />
+                                <rect x="30" y="33" width="40" height="22" rx="6" fill="#040712" stroke="rgba(255, 255, 255, 0.05)" />
+                                <circle cx="42" cy="44" r="5" fill="var(--color-primary)" />
+                                <circle cx="58" cy="44" r="5" fill="var(--color-primary)" />
+                                <ellipse cx="42" cy="44" rx="2" ry="3" fill="#ffffff" />
+                                <ellipse cx="58" cy="44" rx="2" ry="3" fill="#ffffff" />
+                                <path d="M 44 51 Q 50 54 56 51" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" />
+                                <rect x="44" y="71" width="12" height="10" rx="2" fill="var(--color-secondary)" />
+                                <path d="M 30 81 L 70 81 L 65 95 L 35 95 Z" fill="#0b1224" stroke="var(--color-primary)" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer Area -->
-    <footer class="footer">
+        <!-- Call to Action Section -->
+        <section id="contact" class="contact-section section-padding reveal" aria-label="Get in touch">
+            <div class="container contact-container">
+                <h2 class="contact-headline">Let's start something <span>great</span> together</h2>
+                <p class="contact-desc">Open to junior opportunities, internships, and collaborative research in agentic AI. Let's engineering-mind the future.</p>
+                
+                <a href="mailto:bazina.misbah@gmail.com" class="btn btn-primary btn-lg">Get in touch</a>
+                
+                <!-- Decorative Neural Wave Divider -->
+                <svg class="neural-wave-svg" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M-50 60 C 100 110, 200 20, 350 70 C 500 120, 650 30, 850 60" stroke="rgba(0, 210, 255, 0.15)" stroke-width="2" />
+                    <path d="M-50 40 C 150 20, 250 100, 400 50 C 550 0, 600 110, 850 80" stroke="rgba(181, 95, 230, 0.15)" stroke-width="1.5" />
+                    <path d="M-50 80 C 120 50, 180 80, 300 40 C 420 0, 580 80, 850 30" stroke="rgba(255, 0, 127, 0.1)" stroke-width="1" />
+                </svg>
+
+                <!-- Social Links -->
+                <div class="social-links-grid" aria-label="Social media links">
+                    <a href="https://github.com/Bazzzina" target="_blank" rel="noopener noreferrer" class="social-btn-box" title="GitHub" aria-label="Visit GitHub profile">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/misbah-bazina" target="_blank" rel="noopener noreferrer" class="social-btn-box" title="LinkedIn" aria-label="Visit LinkedIn profile">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
         <div class="container footer-meta-info">
-            <p>© 2026 Misbah Bazina. All rights reserved.</p>
+            <p>&copy; 2026 Misbah Bazina. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- References & Scripts -->
-    <script src="projects.js"></script>
-    <script src="chatbot.js"></script>
-    <script>
-        // DOM Elements
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".nav-menu");
-        const navLinks = document.querySelectorAll(".nav-link");
-        const projectsSidebar = document.getElementById("projects-sidebar");
-        
-        // Hamburger Menu Toggle
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navMenu.classList.toggle("active");
-        });
-
-        // Close menu when clicking nav links
-        navLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                hamburger.classList.remove("active");
-                navMenu.classList.remove("active");
-            });
-        });
-
-        // ==========================================================================
-        // Load & Manage Projects dynamically from projects.js
-        // ==========================================================================
-        function renderProjects() {
-            if (!projectsSidebar) return;
-            
-            if (typeof projects === 'undefined' || projects.length === 0) {
-                projectsSidebar.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">No projects uploaded yet.</p>';
-                return;
-            }
-
-            // Render Sidebar project triggers
-            projectsSidebar.innerHTML = projects.map((project, index) => {
-                const padIndex = String(index + 1).padStart(2, '0');
-                return `
-                    <div class="project-select-item glass-panel ${index === 0 ? 'active' : ''}" data-index="${index}">
-                        <div class="project-select-header">
-                            <span class="project-select-index">PROJECT ${padIndex}</span>
-                        </div>
-                        <h3 class="project-select-name">${project.name}</h3>
-                        <p class="project-select-desc">${project.description}</p>
-                    </div>
-                `;
-            }).join('');
-
-            // Click listener for project selection
-            const items = projectsSidebar.querySelectorAll(".project-select-item");
-            items.forEach(item => {
-                item.addEventListener("click", () => {
-                    items.forEach(i => i.classList.remove("active"));
-                    item.classList.add("active");
-                    const index = parseInt(item.getAttribute("data-index"));
-                    displayActiveProject(index);
-                });
-            });
-
-            // Display initial active project
-            displayActiveProject(0);
-        }
-
-        function displayActiveProject(index) {
-            const project = projects[index];
-            if (!project) return;
-
-            document.getElementById("active-project-title").textContent = project.name;
-            document.getElementById("active-project-desc").textContent = project.description;
-            
-            // Set tech tags
-            const tagsWrap = document.getElementById("active-project-tags");
-            if (project.tags && project.tags.length > 0) {
-                tagsWrap.innerHTML = project.tags.map(tag => `<span class="project-tag-pill">${tag}</span>`).join('');
-            } else {
-                tagsWrap.innerHTML = '';
-            }
-
-            // Set github url
-            const githubLink = document.getElementById("active-project-github");
-            githubLink.href = project.githubUrl;
-        }
-
-        // ==========================================================================
-        // Interactive Skills SVG Network graph details updating
-        // ==========================================================================
-        function initSkillsGraph() {
-            const skillNodes = document.querySelectorAll(".skill-node");
-            const skillTitle = document.getElementById("skill-title");
-            const skillDesc = document.getElementById("skill-desc");
-            const skillProgress = document.getElementById("skill-progress");
-            const skillLevel = document.getElementById("skill-level");
-
-            skillNodes.forEach(node => {
-                const activateNode = () => {
-                    skillNodes.forEach(n => n.classList.remove("active"));
-                    node.classList.add("active");
-
-                    const name = node.getAttribute("data-skill");
-                    const level = node.getAttribute("data-level");
-                    const desc = node.getAttribute("data-desc");
-
-                    skillTitle.textContent = name;
-                    skillDesc.textContent = desc;
-                    skillProgress.style.width = level + "%";
-                    skillLevel.textContent = `Level: ${parseFloat(level) / 10}/10`;
-                };
-
-                node.addEventListener("mouseenter", activateNode);
-                node.addEventListener("click", activateNode);
-            });
-
-            // Load the default active node values (Python) on launch
-            const defaultNode = document.querySelector(".skill-node.active");
-            if (defaultNode) {
-                const event = new Event('mouseenter');
-                defaultNode.dispatchEvent(event);
-            }
-        }
-
-        // ==========================================================================
-        // Scroll Animation Engine (Intersection Observer)
-        // ==========================================================================
-        function initScrollAnimations() {
-            const reveals = document.querySelectorAll(".reveal");
-            
-            const revealOptions = {
-                root: null,
-                threshold: 0.08,
-                rootMargin: "0px 0px -40px 0px"
-            };
-
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("active");
-                        obs.unobserve(entry.target); // Trigger once
-                    }
-                });
-            }, revealOptions);
-
-            reveals.forEach(el => {
-                observer.observe(el);
-            });
-        }
-
-        // Initialize Page
-        document.addEventListener("DOMContentLoaded", () => {
-            renderProjects();
-            initSkillsGraph();
-            // Allow dynamic sidebar rendering before measuring elements for animation reveals
-            setTimeout(initScrollAnimations, 50);
-        });
-    </script>
+    <!-- Scripts (loaded at end of body for performance) -->
+    <script src="data/projects.js"></script>
+    <script src="data/certificates.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
